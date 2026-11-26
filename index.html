@@ -4,67 +4,98 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stacked Home Page</title>
+    <title>Home Page | Stacked - Bar &amp; Grill</title>
   </head>
+  
   <body>
     
     <header>
-      <div class="sub-header">
-        <a href="...">Language</a>
-        <a href="...">Accessibilty</a>
-        <a href="...">Help</a>
-      </div>
-      <div class="main-header">
-        <a alt="logo" href="index.html"><h1 class="logo">Stacked</h1></a>
+      <nav class="sub-header">
         <ul>
-          <li><a href="about.html">About</a></li>
+          <li><a aria-label href="#">Language</a></li>
+          <li><a aria-label href="#">Accessibility</a></li>
+          <li><a aria-label href="#">Help</a></li>
+        </ul>
+      </nav>
+      <nav class="main-header">
+        <ul class="logo">
+          <li><a aria-label href="index.html" id="home-button"><img src="./new-logo.png" alt="Restaurant name home"></a></li>
+        </ul>
+        <script src="script.js" defer>
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      console.log('button:', hamburger, 'menu:', navMenu);
+
+      hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open'); 
+        hamburger.setAttribute('aria-expanded', isOpen);
+      }); 
+    </script>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="about.html">About Us</a></li>
           <li><a href="menu.html">Our Menu</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
-      </div>
+      </nav>
     </header>
 
-    <br>
+    
     
     <main>
-      <section class="hero-section-1">
-        <image class="image-hero-1"  autoplay loop playsinline poster="./background-image.jpg">
-          <source src="./1.jpg/2.jpg/3.jpg/4.jpg/5.jpg" type="image/jpg">
-        </image>
+      <section class="hero-section" id="section-1">
+        <div class="hero-slides">
+          <img src="./background-image.jpg" alt="stacked-dining-table">
+          <img src="./5.jpg" alt="sitting at the table">
+          <img src="./6.jpg" alt="buying a drink"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <h2>Let loose at the bar & grill</h2>
-          <button>Order Now</button>
+          <h1>Let loose at the bar &amp; grill</h1>
+          <nav>
+            <a aria-label href="menu.html">Order Now</a>
+          </nav>
         </div>
       </section>
 
-      <br> 
-    
-      <section class="hero-section-2">
-        <h3>Our Most Popular Items & Beverages</h3>
-          <image class="image-hero-2" autoplay loop playsinline poster="background-image.jpg">
-            <source src="./1.jpg/2.jpg/3.jpg/4.jpg/5.jpg" type="image/jpg">
-          </image>
+      <br>
+      
+      <h2>Our Most Popular Items &amp; Beverages</h2>
+      <section class="hero-section" id="section-2">
+        <div class="hero-slides">
+          <img src="./1.jpg" alt="Popular menu items and drinks" loading="lazy"> 
+          <img src="./2.jpg" alt="Popular menu items and drinks" loading="lazy">
+          <img src="./3.jpg" alt="Popular menu items and drinks" loading="lazy">
+          <img src="./4.jpg" alt="Popular menu items and drinks" loading="lazy">
+          <div class="hero-overlay"></div>
+            <div class="hero-content">
+            </div>
       </section>
     </main>
     
     <footer>
-      <div class="footer">
-        <a href="...">Language</a>
-        <a href="...">Accessibilty</a>
-        <a href="...">Help</a>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Our Menu</a>
-        <a href="contact.html">Contact Us</a>
-      </div>  
-      <div class="social-media">  
-        <p alt="footer-text">Our Social Media</p>
-        <a href="https://www.instagram.com/stackedvisalia/">Instagram</a>
-        <a href="https://www.facebook.com/stackedvisalia/">Facebook</a>
-        <a href="https://www.yelp.com/biz/stacked-bar-and-grill-visalia">Yelp</a>
-      </div>
+      <nav class="footer">
+        <ul>
+          <li><a aria-label href="#">Language</a></li>
+          <li><a aria-label href="#">Accessibility</a></li>
+          <li><a aria-label href="#">Help</a></li>
+          <li><a aria-label href="index.html">Home</a></li>
+          <li><a aria-label href="about.html">About</a></li>
+          <li><a aria-label href="menu.html">Our Menu</a></li>
+          <li><a aria-label href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <nav class="social-media"> 
+        <ul>          
+          <li><p>Our Social Media:</p></li>
+          <li><a aria-label href="https://www.instagram.com/stackedvisalia/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a aria-label href="https://www.facebook.com/stackedvisalia/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a aria-label href="https://www.yelp.com/biz/stacked-bar-and-grill-visalia" target="_blank" rel="noopener">Yelp</a></li>
+        </ul>
+      </nav>
     </footer>
-    
   </body>
 </html>

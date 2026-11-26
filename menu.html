@@ -4,96 +4,121 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu</title>
+    <title>Home Page | Stacked - Bar &amp; Grill</title>
   </head>
   <body>
     
     <header>
-      <div class="sub-header">
-        <a href="...">Language</a>
-        <a href="...">Accessibilty</a>
-        <a href="...">Help</a>
-      </div>
-      <div class="main-header">
-        <a alt="logo" href="index.html"><h1 class="logo">Stacked</h1></a>
+      <nav class="sub-header">
         <ul>
-          <li><a href="about.html">About</a></li>
+          <li><a aria-label href="#">Language</a></li>
+          <li><a aria-label href="#">Accessibility</a></li>
+          <li><a aria-label href="#">Help</a></li>
+        </ul>
+      </nav>
+      <nav class="main-header">
+        <ul class="logo">
+          <li><a aria-label href="index.html" id="home-button"><img src="./new-logo.png" alt="Restaurant name home"></a></li>
+        </ul>
+        <script src="script.js" defer>
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      console.log('button:', hamburger, 'menu:', navMenu);
+
+      hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open'); 
+        hamburger.setAttribute('aria-expanded', isOpen);
+      }); 
+    </script>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="about.html">About Us</a></li>
           <li><a href="menu.html">Our Menu</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
-      </div>
+      </nav>
     </header>
-    <br>
+    
     <main>
     <section class="hero-menu">
+      <nav>
       <div class="appetizer-hero">
         <h3>Appetizers</h3>
         <div class="card">
-          <a href="..."><img class="dish-thumbnail" alt="fried-pickles" src="./images/fried-pickles.jpg"><h4>Fried Pickles</h4>$2.00</a> 
+          <a aria-label href="#"><img class="dish-thumbnail" alt="fried-pickles" src="./images/fried-pickles.jpg"><h4>Fried Pickles</h4>$2.00</a> 
         </div>
       </div>
       <div class="salad-hero">
         <h3>Salads</h3>
         <div class="card">
-          <a href="..."><img class="dish-thumbnail" alt="spring-mix-salad" src="./images/spring-mix-salad.jpg"><h4>Spring Mix Salad</h4>$2.00</a> 
+          <a aria-label href="#"><img class="dish-thumbnail" alt="spring-mix-salad" src="./images/spring-mix-salad.jpg"><h4>Spring Mix Salad</h4>$2.00</a> 
         </div>
       </div>
       <div class="bowl-hero">
         <h3>Power Bowls</h3>
         <div class="card">
-          <a href="..."><img class="dish-thumbnail" alt="grilled-chicken-power-bowl" src="./images/grilled-chicken-power-bowl.jpg"><h4>Grilled Chicken Power Bowl</h4>$2.00</a> 
+          <a aria-label href="#"><img class="dish-thumbnail" alt="grilled-chicken-power-bowl" src="./images/grilled-chicken-power-bowl.jpg"><h4>Grilled Chicken Power Bowl</h4>$2.00</a> 
         </div>
       </div>
       <div class="burger-hero">
         <h3>Stack Your Burger</h3>
         <div class="card">
-          <a href="..."><img class="dish-thumbnail" alt="stack-your-burger-combo" src="./images/stack-your-burger-combo.jpg"><h4>Stack-Your-Burger Combo</h4>$8.00</a> 
+          <a aria-label href="#"><img class="dish-thumbnail" alt="stack-your-burger-combo" src="./images/stack-your-burger-combo.jpg"><h4>Stack-Your-Burger Combo</h4>$8.00</a> 
         </div>
       </div>
       <div class="specialty-hero">
         <h3>Specialty Burgers</h3>
         <div class="card">
-          <a href="..."><img class="dish-thumbnail" alt="stacked-bbq-burger-meal" src="./images/stacked-bbq-burger-meal.jpg"><h4>Stacked BBQ Burger Meal</h4>$8.00</a> 
+          <a aria-label href="#"><img class="dish-thumbnail" alt="stacked-bbq-burger-meal" src="./images/stacked-bbq-burger-meal.jpg"><h4>Stacked BBQ Burger Meal</h4>$8.00</a> 
         </div>
       </div>
       <div class="kids-meal-hero">
         <h3>Kids Meal</h3>
         <div class="card">
-          <a href="..."><img class="dish-thumbnail" alt="kids-cheeseburger-and-fries" src="./images/kids-cheeseburger-and-fries.jpg"><h4>Kids Cheeseburger & Fries</h4>$4.00</a> 
+          <a aria-label href="#"><img class="dish-thumbnail" alt="kids-cheeseburger-and-fries" src="./images/kids-cheeseburger-and-fries.jpg"><h4>Kids Cheeseburger & Fries</h4>$4.00</a> 
         </div>
       </div>
       <div class="dessert-hero">
         <h3>Desserts</h3>
         <div class="card">
-          <a href="..."><img class="dish-thumbnail" alt="mini-cheesecake" src="./images/mini-cheesecake.jpg"><h4>Mini Cheesecake</h4>$2.00</a> 
+          <a aria-label href="#"><img class="dish-thumbnail" alt="mini-cheesecake" src="./images/mini-cheesecake.jpg"><h4>Mini Cheesecake</h4>$2.00</a> 
         </div>
       </div>
       <div class="drink-hero">
         <h3>Drinks</h3>
         <div class="card">
-          <a href="..."><img class="dish-thumbnail" alt="soft-drink" src="./images/soft-drink.jpg"><h4>Soft Drink (Your Choice)</h4>$1.50</a> 
-          <a href="..."><img class="dish-thumbnail" alt="mixed-drink" src="./images/mixed-drink.jpg"><h4>Hard Drink (Cocktails, Mixed, etc.)</h4>$5.00</a>
+          <a aria-label href="#"><img class="dish-thumbnail" alt="soft-drink" src="./images/soft-drink.jpg"><h4>Soft Drink (Your Choice)</h4>$1.50</a> 
+          <a aria-label href="#"><img class="dish-thumbnail" alt="mixed-drink" src="./images/mixed-drink.jpg"><h4>Hard Drink (Cocktails, Mixed, etc.)</h4>$5.00</a>
         </div>
       </div>
+      </nav>
     </section>
     </main>
-    <br>
+    
     <footer>
-      <div class="footer">
-        <a href="...">Language</a>
-        <a href="...">Accessibilty</a>
-        <a href="...">Help</a>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Our Menu</a>
-        <a href="contact.html">Contact Us</a>
-      </div>  
-      <div class="social-media">  
-        <p alt="footer-text">Our Social Media</p>
-        <a href="https://www.instagram.com/stackedvisalia/">Instagram</a>
-        <a href="https://www.facebook.com/stackedvisalia/">Facebook</a>
-        <a href="https://www.yelp.com/biz/stacked-bar-and-grill-visalia">Yelp</a>
-      </div>
+      <nav class="footer">
+        <ul>
+          <li><a aria-label href="#">Language</a></li>
+          <li><a aria-label href="#">Accessibility</a></li>
+          <li><a aria-label href="#">Help</a></li>
+          <li><a aria-label href="index.html">Home</a></li>
+          <li><a aria-label href="about.html">About</a></li>
+          <li><a aria-label href="menu.html">Our Menu</a></li>
+          <li><a aria-label href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <nav class="social-media"> 
+        <ul>          
+          <li><p>Our Social Media:</p></li>
+          <li><a aria-label href="https://www.instagram.com/stackedvisalia/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a aria-label href="https://www.facebook.com/stackedvisalia/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a aria-label href="https://www.yelp.com/biz/stacked-bar-and-grill-visalia" target="_blank" rel="noopener">Yelp</a></li>
+        </ul>
+      </nav>
     </footer>
     
   </body>

@@ -4,60 +4,86 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Home Page | Stacked - Bar &amp; Grill</title>
   </head>
   <body>
 
     <header>
-      <div class="sub-header">
-        <a href="...">Language</a>
-        <a href="...">Accessibilty</a>
-        <a href="...">Help</a>
-      </div>
-      <div class="main-header">
-        <a alt="logo" href="index.html"><h1 class="logo">Stacked</h1></a>
+      <nav class="sub-header">
         <ul>
-          <li><a href="about.html">About</a></li>
+          <li><a aria-label href="#">Language</a></li>
+          <li><a aria-label href="#">Accessibility</a></li>
+          <li><a aria-label href="#">Help</a></li>
+        </ul>
+      </nav>
+      <nav class="main-header">
+        <ul class="logo">
+          <li><a aria-label href="index.html" id="home-button"><img src="./new-logo.png" alt="Restaurant name home"></a></li>
+        </ul>
+        <script src="script.js" defer>
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      console.log('button:', hamburger, 'menu:', navMenu);
+
+      hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open'); 
+        hamburger.setAttribute('aria-expanded', isOpen);
+      }); 
+    </script>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="about.html">About Us</a></li>
           <li><a href="menu.html">Our Menu</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
-      </div>
+      </nav>
     </header>
-    <br>
+    
     <main>
-      <article>
-      Stacked is focused on bringing good times and good memories from the heart of Visalia, to you in the heart of all your friends. Feel free to have a burger and grab a brewsky with your friends, and chat about life, work or whatever you want. Let loose and party tonight, or invite your partner on a date over here at Stacked.  
-    </article>
-    <br>
-      <section class="grid-hero">
-        <img class="section-background" src="section-background.jpg">
-        <h2>Find us on our platforms</h2>
+      <div class="article-hero">
+        <img class="article-background" src="section-background.jpg" alt="article background">
+        <article>
+          Stacked is focused on bringing good times and good memories from the heart of Visalia, to you in the heart of all your friends. Feel free to have a burger and grab a brewsky with your friends, and chat about life, work or whatever you want. Let loose and party tonight, or invite your partner on a date over here at Stacked.  
+        </article>
+        <section class="grid-hero">
+          <h2>Find us on our platforms</h2>
           <div class="grid-items">
-            <button class="card" href="https://www.instagram.com/stackedvisalia/">Instagram<img alt="instagram-thumbnail" src="https://www.svgrepo.com/show/452229/instagram-1.svg"></button>
-            <button class="card" href="https://www.facebook.com/stackedvisalia/">Facebook<img alt="facebook-thumbnail" src="https://www.svgrepo.com/show/452196/facebook-1.svg"></button>
-            <button class="card" href="https://www.yelp.com/biz/stacked-bar-and-grill-visalia">Yelp<img alt="yelp-thumbnail" src="https://www.svgrepo.com/show/349576/yelp.svg"></button>
+            <nav>
+              <a href="https://www.instagram.com/stackedvisalia/"><button class="card">Instagram<img alt="instagram-thumbnail" src="./instagram-logo.svg"></button></a>
+              <a href="https://www.facebook.com/stackedvisalia/"><button class="card">Facebook<img alt="facebook-thumbnail" src="./facebook-logo.svg"></button></a>
+              <a href="https://www.yelp.com/biz/stacked-bar-and-grill-visalia"><button class="card">Yelp<img alt="yelp-thumbnail" src="./yelp-logo.svg"></button></a>
+            </nav>  
           </div>
       </section>
+      </div>
     </main>
     
-    <br> 
+    
 
     <footer>
-      <div class="footer">
-        <a href="...">Language</a>
-        <a href="...">Accessibilty</a>
-        <a href="...">Help</a>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Our Menu</a>
-        <a href="contact.html">Contact Us</a>
-      </div>  
-      <div class="social-media">  
-        <p alt="footer-text">Our Social Media</p>
-        <a href="https://www.instagram.com/stackedvisalia/">Instagram</a>
-        <a href="https://www.facebook.com/stackedvisalia/">Facebook</a>
-        <a href="https://www.yelp.com/biz/stacked-bar-and-grill-visalia">Yelp</a>
-      </div>
+      <nav class="footer">
+        <ul>
+          <li><a aria-label href="#">Language</a></li>
+          <li><a aria-label href="#">Accessibility</a></li>
+          <li><a aria-label href="#">Help</a></li>
+          <li><a aria-label href="index.html">Home</a></li>
+          <li><a aria-label href="about.html">About</a></li>
+          <li><a aria-label href="menu.html">Our Menu</a></li>
+          <li><a aria-label href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <nav class="social-media"> 
+        <ul>          
+          <li><p>Our Social Media:</p></li>
+          <li><a aria-label href="https://www.instagram.com/stackedvisalia/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a aria-label href="https://www.facebook.com/stackedvisalia/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a aria-label href="https://www.yelp.com/biz/stacked-bar-and-grill-visalia" target="_blank" rel="noopener">Yelp</a></li>
+        </ul>
+      </nav>
     </footer>
     
   </body>
